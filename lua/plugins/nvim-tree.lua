@@ -3,21 +3,43 @@ return {
     dependencies = {'nvim-tree/nvim-web-devicons'},
     config = function()
         require('nvim-tree').setup({
+			view = {
+				adaptive_size = true,
+			},
 			renderer = {
 				icons = {
+					webdev_colors = true,
+					show = {
+						file = true,
+						folder = true,
+						folder_arrow = true,
+						git = true,
+					},
 					glyphs = {
+						default = "",
+						symlink = "",
+						folder = {
+							arrow_closed = "",
+							arrow_open = "󰦺",
+							default = "",
+							open = "",
+							empty = "",
+							empty_open = "",
+							symlink = "",
+							symlink_open = "",
+						},
 						git = {
-							unstaged = "[~]",
-							staged = "[S]",
-							unmerged = "[C]",
-							renamed = "[R]",
-							untracked = "[+]",
-							deleted = "[D]",
-							ignored = "[◌]",
+							unstaged = "",
+							staged = "",
+							unmerged = "",
+							renamed = "➜",
+							untracked = "",
+							deleted = "",
+							ignored = "◌",
 						},
 					},
 					git_placement = 'before',
-					diagnostics_placement = 'before',
+					diagnostics_placement = 'after',
 				},
 				highlight_git = true,
 				highlight_diagnostics = true,
@@ -32,6 +54,13 @@ return {
 			},
 			diagnostics = {
 				enable = true,
+				show_on_dirs = false,
+				icons = {
+					hint = "",
+					info = "",
+					warning = "",
+					error = "",
+				},
 			},
 		})
 
