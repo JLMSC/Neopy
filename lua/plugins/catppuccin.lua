@@ -39,6 +39,13 @@ return {
 			-- TODO: Add integrations.
 			-- Custom colors for integrations, matching 'catppuccin' colorscheme colors.
 			integrations = {
+				-- Nvim CMP
+				cmp = true,
+				indent_blankline = {
+					enabled = true,
+					scope_color = '',
+					colored_indent_levels = false,
+				},
 				-- Nvim LSP
 				native_lsp = {
 					enabled = true,
@@ -64,6 +71,7 @@ return {
 				which_key = true,
 			},
 			-- TODO: Add custom highlights.
+			-- TODO: Change NvimTree diagnostics highlights.
 			-- Custom highlights, making tweaks to match 'catppuccin' colorscheme.
 			custom_highlights = function(colors)
 				return {
@@ -100,6 +108,29 @@ return {
 					},
 					WhichKeyFloat = {
 						bg = latte.crust,
+					},
+					-----------------------------
+					-- NvimTree
+					NvimTreeGitDirty = { -- Unstaged
+						fg = latte.peach,
+					},
+					NvimTreeGitNew = { -- Untracked
+						fg = latte.green,
+					},
+					NvimTreeGitIgnored = { -- Ignored
+						fg = latte.surface2,
+					},
+					NvimTreeGitDeleted = { -- Deleted
+						fg = latte.maroon,
+					},
+					NvimTreeGitRenamed = { -- Renamed
+						fg = latte.pink,
+					},
+					NvimTreeGitStaged = { -- Staged
+						fg = latte.sky,
+					},
+					NvimTreeGitMerge = { -- Unmerged
+						fg = latte.mauve,
 					},
 					-----------------------------
 				}
