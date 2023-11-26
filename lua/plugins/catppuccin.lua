@@ -36,17 +36,31 @@ return {
 				types = {'italic'},
 				operators = {'bold'},
 			},
-
-			-- TODO: Add integrations.
-
 			-- Custom colors for integrations, matching 'catppuccin' colorscheme colors.
 			integrations = {
-				-- Nvim CMP
-				cmp = true,
+				-- Barbar
+				barbar = true,
+				-- Barbecue
+				barbecue = {
+					dim_dirname = true,
+					bold_basename = true,
+					dim_context = false,
+					alt_background = false,
+				},
+				-- Dashboard
+				dashboard = true,
+				-- Indent Blankline
 				indent_blankline = {
 					enabled = true,
 					scope_color = '',
 					colored_indent_levels = false,
+				},
+				-- Nvim CMP
+				cmp = true,
+				-- Nvim DAP
+				dap = {
+					enabled = true,
+					enable_ui = true,
 				},
 				-- Nvim LSP
 				native_lsp = {
@@ -61,23 +75,33 @@ return {
 						errors = {'underline'},
 						hints = {'underline'},
 						warnings = {'underline'},
-						informations = {'underline'},
+						information = {'underline'},
 					},
-					inlay_hints = {
+					inaly_hints = {
 						background = true,
 					},
+				},
+				-- Navic
+				navic = {
+					enabled = true,
+					custom_bg = "NONE",
 				},
 				-- NvimTree
 				nvimtree = true,
 				-- NvimTreesitter
 				treesitter = true,
+				-- Telescope
+				telescope = {
+					enabled = true,
+				},
+				-- Vim Illuminate
+				illuminate = {
+					enabled = true,
+					lsp = true,
+				},
 				-- Which Key
 				which_key = true,
 			},
-
-			-- TODO: Add custom highlights.
-			-- TODO: Change NvimTree diagnostics highlights.
-
 			-- Custom highlights, making tweaks to match 'catppuccin' colorscheme.
 			custom_highlights = function(colors)
 				return {
@@ -152,6 +176,79 @@ return {
 					},
 					Folded = { -- Folded line highlight.
 						bg = latte.mantle,
+					},
+					-----------------------------
+					-- Barbar
+					BufferCurrent = { -- Barbar CURRENT buffer.
+						fg = latte.text,
+						bg = latte.base,
+					},
+					BufferCurrentSign = { -- Barbar CURRENT separator between buffers.
+						fg = latte.mantle,
+						bg = latte.blue,
+					},
+					BufferCurrentMod = { -- Barbar CURRENT when modified.
+						fg = latte.text,
+						bg = latte.base,
+						style = {'italic'},
+					},
+					BufferCurrentTarget = { -- Barbar CURRENT pick letter.
+						bg = latte.base,
+						style = {'bold'},
+					},
+					BufferInactive = { -- Barbar INACTIVE buffer.
+						fg = latte.overlay0,
+					},
+					BufferInactiveSign = { -- Barbar INACTIVE separator between buffers.
+						fg = latte.surface0,
+						bg = latte.mantle,
+					},
+					BufferInactiveMod = { -- Barbar INACTIVE when modified.
+						fg = latte.overlay0,
+						style = {'italic'},
+					},
+					BufferVisible = { -- Barbar VISIBLE buffer.
+						fg = latte.text,
+						bg = latte.base,
+					},
+					BufferVisibleSign = { -- Barbar VISIBLE separator between buffers.
+						fg = latte.mantle,
+						bg = latte.blue,
+					},
+					BufferVisibleMod = { -- Barbar VISIBLE when modified.
+						fg = latte.text,
+						bg = latte.base,
+						style = {'italic'},
+					},
+					BufferVisibleTarget = { -- Barbar VISIBLE pick letter.
+						bg = latte.base,
+						style = {'bold'},
+					},
+					-----------------------------
+					-- Dashboard
+					DashboardLazy = { -- Dashboard 'Lazy update' highlight.
+						fg = latte.sky,
+						style = {'bold'},
+					},
+					DashboardOpenFile = { -- Dashboard 'Open file' highlight.
+						fg = latte.yellow,
+						style = {'bold'},
+					},
+					DashboardTerminal = { -- Dashboard 'Terminal' highlight.
+						fg = latte.subtext0,
+						style = {'bold'},
+					},
+					DashboardHealth = { -- Dashboard 'Check Health' highlight.
+						fg = latte.green,
+						style = {'bold'},
+					},
+					DashboardPlugins = { -- Dashboard 'Plugins' highlight.
+						fg = latte.mauve,
+						style = {'bold'},
+					},
+					DashboardExit = { -- Dashboard 'Quit' highlight.
+						fg = latte.maroon,
+						style = {'bold'},
 					},
 					-----------------------------
 				}

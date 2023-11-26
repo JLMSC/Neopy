@@ -10,7 +10,6 @@ let g:mapleader=' '
 " Setup Lazy.nvim if needed.
 runtime lua/lazy-initial-config.lua
 
-" TODO: LSP for python, lua and vim?
 " Plugins and settings.
 lua require('lazy').setup('plugins')
 

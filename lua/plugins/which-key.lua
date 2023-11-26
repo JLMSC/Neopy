@@ -17,7 +17,6 @@ return {
 			-- Otherwise, just show Dashboard.
 			else
 				-- Show dashboard.
-				-- TODO: Change dashboard.
 				vim.cmd('Dashboard')
 			end
 		end
