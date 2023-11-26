@@ -36,7 +36,9 @@ return {
 				types = {'italic'},
 				operators = {'bold'},
 			},
+
 			-- TODO: Add integrations.
+
 			-- Custom colors for integrations, matching 'catppuccin' colorscheme colors.
 			integrations = {
 				-- Nvim CMP
@@ -67,11 +69,15 @@ return {
 				},
 				-- NvimTree
 				nvimtree = true,
+				-- NvimTreesitter
+				treesitter = true,
 				-- Which Key
 				which_key = true,
 			},
+
 			-- TODO: Add custom highlights.
 			-- TODO: Change NvimTree diagnostics highlights.
+
 			-- Custom highlights, making tweaks to match 'catppuccin' colorscheme.
 			custom_highlights = function(colors)
 				return {
@@ -111,6 +117,9 @@ return {
 					},
 					-----------------------------
 					-- NvimTree
+					NvimTreeCursorLine = {
+						bg = latte.surface0,
+					},
 					NvimTreeGitDirty = { -- Unstaged
 						fg = latte.peach,
 					},
@@ -131,6 +140,18 @@ return {
 					},
 					NvimTreeGitMerge = { -- Unmerged
 						fg = latte.mauve,
+					},
+					-----------------------------
+					-- NvimUFO
+					MoreMsg = { -- Folded lines indicator.
+						fg = latte.green,
+						style = {'italic'},
+					},
+					UfoCursorLineFoldedLine = { -- Folded line with cursor on it.
+						bg = latte.surface0,
+					},
+					Folded = { -- Folded line highlight.
+						bg = latte.mantle,
 					},
 					-----------------------------
 				}
