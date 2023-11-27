@@ -13,6 +13,8 @@ return {
 				fg = "BOLD",
 			},
 			keywords = {
+				-- TODO: Add custom keywords to match 'better comments' from vscode.
+				-- FIXME: I'm pretty sure there's a way to avoid use of upper and lower cases here with regex. (find out how)
 				FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "fixme", "fix", "bug", "fixit", "issue" } },
 				TODO = { icon = " ", color = "info", alt = { "todo", } },
 				WARN = { icon = " ", color = "warning", alt = { "WARNING", "warn", "warning", } },

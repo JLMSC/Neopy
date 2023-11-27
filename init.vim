@@ -11,6 +11,7 @@ let g:mapleader=' '
 runtime lua/lazy-initial-config.lua
 
 " Plugins and settings.
+" TODO: Separate plugins in folders like core/ ui/ utils/ etc.
 lua require('lazy').setup('plugins')
 
 
