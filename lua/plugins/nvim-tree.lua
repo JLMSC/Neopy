@@ -6,6 +6,10 @@ return {
 			view = {
 				adaptive_size = true,
 			},
+			live_filter = {
+				prefix = '[FILTER]: ',
+				always_show_folders = false,
+			},
 			renderer = {
 				icons = {
 					webdev_colors = true,
@@ -64,7 +68,7 @@ return {
 			},
 		})
 
-		-- Add NvimTree mapping to WhichKey.
+		-- Add NvimTree mappings to WhichKey.
 		local wk = require('which-key')
 		wk.register({
 			['<leader>'] = {
@@ -76,5 +80,5 @@ return {
 				},
 			},
 		})
-    end,
+	end,
 }

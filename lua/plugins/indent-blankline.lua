@@ -11,6 +11,7 @@ return {
 				'help',
 				'man',
 				'gitcommit',
+				-- TODO: Maybe I'll remove Telescope latter.
 				'TelescopePrompt',
 				'TelescopeResults',
 				'dashboard',
