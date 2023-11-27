@@ -73,6 +73,7 @@ return {
 			},
 			custom_highlights = {
 				-- TODO: Add cursor custom highlights.
+
 				-----------------------------------------------------
 				-- LSP floating windows highlight settings. ---------
 				NormalFloat = {bg = palette.base,},
@@ -95,7 +96,7 @@ return {
 				-- Folded line with cursor on it.
 				UfoCursorLineFoldedLine = {bg = palette.surface0,},
 				-- Folded line highlight.
-				Folded = {bg = palette.mantle,},
+				Folded = {bg = palette.crust,},
 				-----------------------------------------------------
 				-- Barbar highlight settings. -----------------------
 				BufferCurrent = {fg = palette.text, bg = palette.base,},
