@@ -4,23 +4,6 @@ return {
 	opts = true,
 	config = function()
 		local lualine = require('lualine')
-		-- FIXME: find a way to move this palette to catppuccin.lua file.
-		local palette = require('catppuccin.palettes').get_palette('macchiato')
-		local colors = {
-			bg = palette.overlay0,
-			fg = palette.text,
-			yellow = palette.yellow,
-			cyan = palette.sapphire,
-			darkblue = palette.lavender,
-			green = palette.green,
-			orange = palette.peach,
-			violet = palette.pink,
-			magenta = palette.mauve,
-			blue = palette.blue,
-			red = palette.red,
-			white = palette.surface0,
-		}
-
 		local conditions = {
 			buffer_not_empty = function()
 				return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
@@ -76,28 +59,28 @@ return {
 			'mode',
 			color = function()
 				local mode_color = {
-					n = colors.red,
-					i = colors.green,
-					v = colors.blue,
-					['␖'] = colors.blue,
-					V = colors.blue,
-					c = colors.magenta,
-					no = colors.red,
-					s = colors.orange,
-					S = colors.orange,
-					['␓'] = colors.orange,
-					ic = colors.yellow,
-					R = colors.violet,
-					Rv = colors.violet,
-					cv = colors.red,
-					ce = colors.red,
-					r = colors.cyan,
-					rm = colors.cyan,
-					['r?'] = colors.cyan,
-					['!'] = colors.red,
-					t = colors.red,
+					n = 'LualineMode_n',
+					i = 'LualineMode_i',
+					v = 'LualineMode_v',
+					['␖'] = 'LualineMode_syn',
+					V = 'LualineMode_V',
+					c = 'LualineMode_c',
+					no = 'LualineMode_no',
+					s = 'LualineMode_s',
+					S = 'LualineMode_S',
+					['␓'] = 'LualineMode_oc3',
+					ic = 'LualineMode_ic',
+					R = 'LualineMode_R',
+					Rv = 'LualineMode_Rv',
+					cv = 'LualineMode_cv',
+					ce = 'LualineMode_ce',
+					r = 'LualineMode_r',
+					rm = 'LualineMode_rm',
+					['r?'] = 'LualineMode_rq',
+					['!'] = 'LualineMode_e',
+					t = 'LualineMode_t',
 				}
-				return { fg = colors.white, bg = mode_color[vim.fn.mode()], gui='bold' }
+				return mode_color[vim.fn.mode()]
 			end,
 			padding = { left = 1, right = 1 },
         }
@@ -113,12 +96,12 @@ return {
 			'filename',
 			cond = conditions.buffer_not_empty,
 			path = 1,
-			color = { fg = colors.magenta, gui = 'bold' },
+			color = 'LualineFileName',
         }
 
         ins_left {
             'progress',
-            color = { fg = colors.fg, gui = 'bold' },
+			color = 'LualineProgress',
             padding = { left = 1 },
         }
 
@@ -127,9 +110,9 @@ return {
 			sources = { 'nvim_diagnostic' },
 			symbols = { error = ' ', warn = ' ', info = ' ' },
 			diagnostics_color = {
-				color_error = { fg = colors.red },
-				color_warn = { fg = colors.yellow },
-				color_info = { fg = colors.cyan },
+				color_error = 'LualineDiagnosticsError',
+				color_warn = 'LualineDiagnosticsWarn',
+				color_info = 'LualineDiagnosticsInfo',
 			},
         }
 
@@ -156,23 +139,22 @@ return {
 				return msg
 			end,
 			icon = ' LSP:',
-			color = { fg = colors.white, gui = 'bold' },
+			color = 'LualineLsp',
         }
 
         ins_right {
 			'branch',
 			icon = '',
-			color = { fg = colors.violet, gui = 'bold' },
+			color = 'LualineBranch',
         }
 
-			
         ins_right {
 			'diff',
 			symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
 			diff_color = {
-				added = { fg = colors.green },
-				modified = { fg = colors.orange },
-				removed = { fg = colors.red },
+				added = 'LualineDiffAdded',
+				modified = 'LualineDiffModified',
+				removed = 'LualineDiffRemoved',
 			},
 			cond = conditions.hide_in_width,
         }
@@ -181,14 +163,14 @@ return {
 			'o:encoding',
 			fmt = string.upper,
 			cond = conditions.hide_in_width,
-			color = { fg = colors.blue, gui = 'bold' },
+			color = 'LualineEncoding',
         }
 
         ins_right {
-          'fileformat',
-          fmt = string.upper,
-          icons_enabled = true,
-          color = { fg = colors.fg, gui = 'bold' },
+			'fileformat',
+			fmt = string.upper,
+			icons_enabled = true,
+			color = 'LualineFileFormat',
         }
 
         lualine.setup(config)
