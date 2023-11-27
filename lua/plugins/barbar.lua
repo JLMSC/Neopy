@@ -9,8 +9,23 @@ return {
 			numhl = true,
 		})
 
-		-- Add Barbar mappings to WhichKey.
+		-- Add Gitsigns mappings to WhichKey.
 		local wk = require('which-key')
+		wk.register({
+			['<leader>'] = {
+				g = {
+					name = '+Gitsigns',
+					p = {'<CMD>Gitsigns toggle_current_line_blame<CR>', 'Toggle current line blame'},
+					d = {'<CMD>Gitsigns diffthis ~1 vertical=true split="rightbelow"<CR>', 'Show diffs in the current window/buffer'},
+					b = {'<CMD>Gitsigns prev_hunk<CR>', 'Go to previous hunk'},
+					n = {'<CMD>Gitsigns next_hunk<CR>', 'Go to next hunk'},
+					l = {'<CMD>Gitsigns preview_hunk_inline<CR>', 'Preview hunk inline'},
+					L = {'<CMD>Gitsgins preview_hunk<CR>', 'Preview hunk'},
+				},
+			},
+		})
+
+		-- Add Barbar mappings to WhichKey.
 		wk.register({
 			['<leader>'] = {
 				b = {
@@ -22,21 +37,6 @@ return {
 					r = {'<CMD>BufferRestore<CR>', 'Restore Buffer'},
 					h = {'<CMD>BufferPick<CR>', 'Go to Buffer by pick letter'},
 					l = {'<CMD>BufferPickDelete<CR>', 'Delete Buffer by pick letter'},
-				},
-			},
-		})
-
-		-- Add Gitsigns mappings to WhichKey.
-		wk.register({
-			['<leader>'] = {
-				g = {
-					name = '+Gitsigns',
-					p = {'<CMD>Gitsigns toggle_current_line_blame<CR>', 'Toggle current line blame'},
-					d = {'<CMD>Gitsigns diffthis<CR>', 'Show diffs in the current window/buffer'},
-					b = {'<CMD>Gitsigns prev_hunk<CR>', 'Go to previous hunk'},
-					n = {'<CMD>Gitsigns next_hunk<CR>', 'Go to next hunk'},
-					l = {'<CMD>Gitsigns preview_hunk_inline<CR>', 'Preview hunk inline'},
-					L = {'<CMD>Gitsgins preview_hunk<CR>', 'Preview hunk'},
 				},
 			},
 		})
