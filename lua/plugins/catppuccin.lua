@@ -43,11 +43,13 @@ return {
 				operators = {'bold'},
 			},
 			integrations = {
+				barbar = true,
 				indent_blankline = {
 					enabled = true,
 					scope_color = '',
 					colored_indent_levels = false,
 				},
+				cmp = true,
 				native_lsp = {
 					enabled = true,
 					virtual_text = {
@@ -70,6 +72,7 @@ return {
 				which_key = true,
 			},
 			custom_highlights = {
+				-- TODO: Add cursor custom highlights.
 				-----------------------------------------------------
 				-- LSP floating windows highlight settings. ---------
 				NormalFloat = {bg = palette.base,},
@@ -93,6 +96,19 @@ return {
 				UfoCursorLineFoldedLine = {bg = palette.surface0,},
 				-- Folded line highlight.
 				Folded = {bg = palette.mantle,},
+				-----------------------------------------------------
+				-- Barbar highlight settings. -----------------------
+				BufferCurrent = {fg = palette.text, bg = palette.base,},
+				BufferCurrentSign = {fg = palette.mantle, bg = palette.blue,},
+				BufferCurrentMod = {fg = palette.text, bg = palette.base, style = {'italic'},},
+				BufferCurrentTarget = {bg = palette.base, style = {'bold'},},
+				BufferInactive = {fg = palette.overlay0,},
+				BufferInactiveSign = {fg = palette.surface0, bg = palette.mantle,},
+				BufferInactiveMod = {fg = palette.overlay0, style = {'italic'},},
+				BufferVisible = {fg = palette.text, bg = palette.base,},
+				BufferVisibleSign = {fg = palette.mantle, bg = palette.blue,},
+				BufferVisibleMod = {fg = palette.text, bg = palette.base, style = {'italic'},},
+				BufferVisibleTarget = {bg = palette.base, style = {'bold'},},
 				-----------------------------------------------------
 			},
 		})
