@@ -49,8 +49,6 @@ return {
 					['d'] = {'<CMD>BufferPickDelete<CR>', 'Delete buffer by its pick letter.'},
 				},
 				-- Dap and Dap-UI mappings.
-				-- warn: it's missing persistent-breakpoints plugin.
-				-- warn: goto-breakpoints is missing too.
 				['d'] = {name = '+DAP',
 					['c'] = {'<CMD>DapContinue<CR>', 'Start/Continue DAP session.'},
 					['q'] = {'<CMD>DapTerminate<CR>', 'Terminate DAP session.'},
