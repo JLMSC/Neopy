@@ -39,22 +39,5 @@ return {
 				},
 			},
 		})
-
-		-- TODO: Simple workaround to add something to watches
-		-- Need to make it by selection instead of yanks.
-		function AddYankToWatches()
-			local yanked_text = vim.fn.getreg('"')
-			local cleaned_yank = string.match(yanked_text, '^%s*(.-)%s*$')
-			dapui.elements.watches.add(cleaned_yank)
-		end
-
-		-- Add DAP UI mappings to WhichKey.
-		-- TODO: Move to which-key.lua
-		local wk = require('which-key')
-		wk.register({
-			['<leader>dt'] = {'<CMD>lua require("dapui").toggle()<CR>', 'Toggle DAP UI'},
-			['<leader>dw'] = {'<CMD>lua AddYankToWatches()<CR>', 'Add yank to watches'},
-			['<leader>dk'] = {'<CMD>lua require("dapui").open({reset = true})<CR>', 'Reset DAP UI size'},
-		})
 	end,
 }

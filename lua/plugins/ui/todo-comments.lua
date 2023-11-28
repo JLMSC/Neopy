@@ -47,19 +47,5 @@ return {
 				pattern = [[(-|#|"|')+\s*(KEYWORDS):?\s+]],
 			},
 		})
-
-		-- Add TodoComments mappings to WhichKey.
-		-- TODO: Move to which-key.lua
-		local wk = require('which-key')
-		wk.register({
-			['<leader>'] = {
-				p = {
-					name = '+TodoComments',
-					o = {'<CMD>TodoQuickFix<CR>', 'Search all todos in project'},
-					b = {'<CMD>lua require("todo-comments").jump_prev()<CR>', 'Go to previous todo'},
-					n = {'<CMD>lua require("todo-comments").jump_next()<CR>', 'Go to next todo'},
-				},
-			},
-		})
 	end,
 }

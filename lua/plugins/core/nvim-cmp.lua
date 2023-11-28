@@ -6,13 +6,13 @@ return {
         cmp.setup({
             mapping = cmp.mapping.preset.insert({
                 -- Toggle docs.
-                ['<C-g>'] = function()
-                    if cmp.visible_docs() then
-                        cmp.close_docs()
-                    else
-                        cmp.open_docs()
-                    end
-                end,
+                -- ['<C-g>'] = function()
+                --     if cmp.visible_docs() then
+                --         cmp.close_docs()
+                --     else
+                --         cmp.open_docs()
+                --     end
+                -- end,
                 -- Move 4 lines above in docs.
                 ['<C-b>'] = function(fallback)
                     if cmp.visible_docs() then
@@ -87,19 +87,5 @@ return {
         require('lspconfig').pyright.setup({
             capabilities = capabilites
         })
-
-		-- Add NvimCMP mappings to WhichKey.
-		-- TODO: Move to which-key.lua
-		local wk = require('which-key')
-		wk.register({
-			['<leader>c'] = {name = '+Nvimcmp'},
-			['<leader>c<C-g>'] = {'', 'Toggle docs'},
-			['<leader>c<C-b>'] = {'', 'Move 4 lines above in docs'},
-			['<leader>c<C-n>'] = {'', 'Move 4 lines bellow in docs'},
-			['<leader>c<Tab>'] = {'', 'Move to next completion'},
-			['<leader>c<S-Tab>'] = {'', 'Move to previous completion'},
-			['<leader>c<C-Space>'] = {'', 'Invoke completion'},
-			['<leader>c<CR>'] = {'', 'Accept current completion'},
-		})
     end,
 }

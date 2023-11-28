@@ -6,6 +6,7 @@ return {
 			view = {
 				adaptive_size = true,
 			},
+			-- FIXME: This should expand files in folder while in search.
 			live_filter = {
 				prefix = '[FILTER]: ',
 				always_show_folders = false,
@@ -64,20 +65,6 @@ return {
 					info = "",
 					warning = "",
 					error = "",
-				},
-			},
-		})
-
-		-- Add NvimTree mappings to WhichKey.
-		-- TODO: Move to which-key.lua
-		local wk = require('which-key')
-		wk.register({
-			['<leader>'] = {
-				e = {
-					name = '+NvimTree',
-					e = {'<CMD>NvimTreeToggle<CR>', 'Toggle NvimTree'},
-					f = {'<CMD>NvimTreeFocus<CR>', 'Open and Focus NvimTree'},
-					g = {'', 'Use "g?" in NvimTree for help'},
 				},
 			},
 		})
