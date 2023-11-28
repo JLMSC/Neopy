@@ -1,6 +1,7 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
 	build = ':TSUpdate',
+	dependencies = {'kevinhwang91/nvim-ufo'},
 	config = function()
 		require('nvim-treesitter.configs').setup({
 			ensure_installed = {'python', 'lua'},
