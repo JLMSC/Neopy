@@ -2,33 +2,52 @@ return {
 	'folke/todo-comments.nvim',
 	dependencies = {'nvim-lua/plenary.nvim'},
 	config = function()
-		local latte = require('catppuccin.palettes').get_palette('latte')
 		require('todo-comments').setup({
 			highlight = {
 				before = '',
 				keyword = 'wide_fg',
 				after = 'fg',
+				-- warn: this can be a single regex (just add : as optional)
+				-- fixme: Still not what I want, it NEEDS to be case insensitive.
+				pattern = {
+					[[\s*<(KEYWORDS)\s+]],
+					[[\s*<(KEYWORDS):\s+]],
+				},
+				comments_only = true,
 			},
 			ui_style = {
 				fg = "BOLD",
 			},
 			keywords = {
 				-- TODO: Add custom keywords to match 'better comments' from vscode.
-				-- FIXME: I'm pretty sure there's a way to avoid use of upper and lower cases here with regex. (find out how)
-				FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "fixme", "fix", "bug", "fixit", "issue" } },
-				TODO = { icon = " ", color = "info", alt = { "todo", } },
-				WARN = { icon = " ", color = "warning", alt = { "WARNING", "warn", "warning", } },
-				TEST = { icon = " ", color = "hint", alt = { "test", } },
+				FIXME = { icon = " ", color = "error", alt = {'fixme',},},
+				WARN = { icon = " ", color = "warning", alt = {'warn'},},
+				TODO = { icon = " ", color = "info", alt = {'todo'},},
+				TEST = { icon = " ", color = "hint", alt = {'test'},},
 			},
 			colors = {
-				error = {'DiagnosticError', 'ErrorMsg', latte.maroon},
-				warning = {'DiagnosticWarn', 'WarningMsg', latte.yellow},
-				info = {'DiagnosticInfo', latte.sky},
-				hint = {'DiagnosticHint', latte.sapphire},
-				default = {'Identifier', latte.mauve},
-				test = {'Identifier', latte.green},
+				error = {'DiagnosticError'},
+				warning = {'DiagnosticWarn'},
+				info = {'DiagnosticInfo'},
+				hint = {'DiagnosticHint'},
+			},
+			search = {
+				command = 'rg',
+				args = {
+					'--color=never',
+					'--no-heading',
+					'--with-filename',
+					'--line-number',
+					'--column',
+					'--ignore-case',
+				},
+				-- Workaround I found ...
+				-- Just add more comments to the group lol
+				-- todo: This should produce the same result from vim regex.
+				pattern = [[(-|#|"|')+\s*(KEYWORDS):?\s+]],
 			},
 		})
+
 		-- Add TodoComments mappings to WhichKey.
 		local wk = require('which-key')
 		wk.register({
