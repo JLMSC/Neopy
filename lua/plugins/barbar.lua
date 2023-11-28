@@ -10,6 +10,7 @@ return {
 		})
 
 		-- Add Gitsigns mappings to WhichKey.
+		-- TODO: Move to which-key.lua
 		local wk = require('which-key')
 		wk.register({
 			['<leader>'] = {
@@ -26,6 +27,7 @@ return {
 		})
 
 		-- Add Barbar mappings to WhichKey.
+		-- TODO: Move to which-key.lua
 		wk.register({
 			['<leader>'] = {
 				b = {

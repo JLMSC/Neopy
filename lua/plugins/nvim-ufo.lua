@@ -8,6 +8,7 @@ return {
 		vim.o.foldenable = true
 
 		-- Add Nvim-UFO and custom mapping to which key.
+		-- TODO: Move to which-key.lua
 		local wk = require('which-key')
 		wk.register({
 			['<leader>'] = {

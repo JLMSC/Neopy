@@ -69,6 +69,7 @@ return {
 		})
 
 		-- Add NvimTree mappings to WhichKey.
+		-- TODO: Move to which-key.lua
 		local wk = require('which-key')
 		wk.register({
 			['<leader>'] = {
