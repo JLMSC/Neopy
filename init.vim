@@ -11,7 +11,6 @@ let g:mapleader=' '
 runtime lua/lazy-initial-config.lua
 
 " Plugins and settings.
-" TODO: Separate plugins in folders like core/ ui/ utils/ etc.
 " TODO: Move WhichKey mappings to lua/plugins/which-key.lua
 " TODO: Add some sort of Markdown preview.
 lua require('lazy').setup('plugins')
