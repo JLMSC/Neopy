@@ -19,7 +19,7 @@ return {
                     {
                         desc = ' Open file',
                         group = 'DashboardOpenFile',
-                        action = 'Telescope find_files',
+                        action = 'NvimTreeFindFile',
                         key = 'f',
                     },
                     {
