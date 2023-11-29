@@ -145,6 +145,14 @@ return {
 				LualineEncoding = {fg = palette.blue, bg = palette.mantle, style = {'bold'},},
 				LualineFileFormat = {fg = palette.text, bg = palette.mantle, style = {'bold'},},
 				-----------------------------------------------------
+				-- Dashboard highlight settings. --------------------
+				DashboardLazy = {fg = palette.sky, style = {'bold'},},
+				DashboardOpenFile = {fg = palette.yellow, style = {'bold'},},
+				DashboardTerminal = {fg = palette.subtext0, style = {'bold'},},
+				DashboardHealth = {fg = palette.green, style = {'bold'},},
+				DashboardPlugins = {fg = palette.mauve, style = {'bold'},},
+				DashboardExit = {fg = palette.maroon, style = {'bold'},},
+				-----------------------------------------------------
 			},
 		})
 	end,

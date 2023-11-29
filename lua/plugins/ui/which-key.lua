@@ -48,6 +48,8 @@ return {
 					['h'] = {'<CMD>BufferPick<CR>', 'Go to buffer by its pick letter.'},
 					['d'] = {'<CMD>BufferPickDelete<CR>', 'Delete buffer by its pick letter.'},
 				},
+				-- Dashboard mappings.
+				['D'] = {'<CMD>Dashboard<CR>', 'Dashboard.'},
 				-- Dap and Dap-UI mappings.
 				['d'] = {name = '+DAP',
 					['c'] = {'<CMD>DapContinue<CR>', 'Start/Continue DAP session.'},
