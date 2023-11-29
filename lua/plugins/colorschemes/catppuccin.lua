@@ -153,6 +153,11 @@ return {
 				DashboardPlugins = {fg = palette.mauve, style = {'bold'},},
 				DashboardExit = {fg = palette.maroon, style = {'bold'},},
 				-----------------------------------------------------
+				-- Dap and DapUI
+				DapBreakpoint = {fg = palette.red,},
+				DapBreakpointCondition = {fg = palette.pink,},
+				DapLogPoint = {fg = palette.yellow,},
+				-----------------------------------------------------
 			},
 		})
 	end,
