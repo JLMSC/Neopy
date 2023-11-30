@@ -44,12 +44,22 @@ return {
 			},
 			integrations = {
 				barbar = true,
+				cmp = true,
+				dashboard = true,
+				dap = {
+					enabled = true,
+					enable_ui = true,
+				},
+				gitsigns = true,
+				illuminate = {
+					enabled = true,
+					lsp = true,
+				},
 				indent_blankline = {
 					enabled = true,
 					scope_color = '',
 					colored_indent_levels = false,
 				},
-				cmp = true,
 				native_lsp = {
 					enabled = true,
 					virtual_text = {
@@ -62,13 +72,13 @@ return {
 						background = true,
 					},
 				},
+				navic = {
+					enabled = true,
+					custom_bg = 'NONE',
+				},
 				nvimtree = true,
 				treesitter = true,
 				ufo = true,
-				illuminate = {
-					enabled = true,
-					lsp = true,
-				},
 				which_key = true,
 			},
 			custom_highlights = {
