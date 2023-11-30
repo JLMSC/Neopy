@@ -58,7 +58,11 @@ return {
 			severity_sort = false,
 		})
 
+		-- FIXME: Add LSP mappings.
+
 		-- Run lsp pyright setup.
-		require('lspconfig').pyright.setup({handlers = handlers})
+		require('lspconfig').pyright.setup({
+			handlers = handlers,
+		})
 	end,
 }
