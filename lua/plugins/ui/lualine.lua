@@ -19,11 +19,11 @@ return {
 		}
 
 		local config = {
-			-- TODO: Maybe it would be cool if lualine was only one bar
 			options = {
 				component_separators = '',
 				section_separators = '',
 				theme = 'catppuccin',
+				globalstatus = true,
 			},
 			sections = {
 				lualine_a = {},
