@@ -30,7 +30,7 @@ return {
 		function AddYankToWatches()
 			local yanked_text = vim.fn.getreg('"')
 			local cleaned_yank = string.match(yanked_text, '^%s*(.-)%s*$')
-			dapui.elements.watches.add(cleaned_yank)
+			require("dapui").elements.watches.add(cleaned_yank)
 		end
 
 
