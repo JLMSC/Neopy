@@ -5,14 +5,15 @@ return {
         local cmp = require('cmp')
         cmp.setup({
             mapping = cmp.mapping.preset.insert({
+				-- TODO: Move those to 'which-key.lua'
                 -- Toggle docs.
-                -- ['<C-g>'] = function()
-                --     if cmp.visible_docs() then
-                --         cmp.close_docs()
-                --     else
-                --         cmp.open_docs()
-                --     end
-                -- end,
+                ['<C-g>'] = function()
+                    if cmp.visible_docs() then
+                        cmp.close_docs()
+                    else
+                        cmp.open_docs()
+                    end
+                end,
                 -- Move 4 lines above in docs.
                 ['<C-b>'] = function(fallback)
                     if cmp.visible_docs() then
