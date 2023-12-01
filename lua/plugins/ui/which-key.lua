@@ -62,6 +62,7 @@ return {
 					['w'] = {'<CMD>lua AddYankToWatches()<CR>', 'Add yank to watches.'},
 					['k'] = {'<CMD>lua require("dapui").open({reset=true})<CR>', 'Reset DAP UI size.'},
 				},
+				['f'] = {'<CMD>DogeGenerate<CR>', 'Generate doc.'},
 				-- Gitsigns mappings.
 				['g'] = {name = '+Gitsigns',
 					['p'] = {'<CMD>Gitsigns toggle_current_line_blame<CR>', 'Toggle current line blame.'},
